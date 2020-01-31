@@ -7,7 +7,7 @@ var P = new Pokedex();
 /* GET home page. */
 router.get('/allPokemon.json', function(req, res, next) {
   var interval = {
-    limit:25,
+    limit:26,
   }
   P.getPokemonsList(interval)
     .then(function(response) {

@@ -13,7 +13,6 @@ class PokeBasic extends Component{
   render(){
     const {name, order, height, weight, egg_groups, hatch, abilities} = this.props;
   return (
-
         <div class="grid-container-pokemon">
                 <div class="grid-item-pokemon">
                     <p class="pro-tit">{name}</p>

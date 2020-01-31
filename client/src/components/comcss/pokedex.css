@@ -16,8 +16,7 @@ a{
 
 .home-li{
     display: inline-block;
-    width: 19.8vw;
-    
+    width: 18.8vw;
 }
 
 .home-li:nth-child(2){
@@ -37,7 +36,7 @@ a{
 .theme-but{
     font-family: Helvetica;
     font-size: 1.2vw;
-    font-weight: 400;
+    font-weight: 600;
     background-color: transparent;
     border: none;
     opacity: 0.5;
@@ -55,6 +54,7 @@ a{
     grid-gap: 2vw;
     grid-template-columns: auto auto auto;
     justify-content: center;
+    animation: fadeUp 0.25s 0.25s both; 
 }
 
 .grid-item {
@@ -72,9 +72,7 @@ a{
     transform: translatey(-5%);
 }
 
-
-
-@keyframes team {
+@keyframes fadeUp {
     0% {
         opacity: 0;
         transform: translatey(10px)
@@ -85,6 +83,7 @@ a{
         transform: translatey(0px)
     }
 }
+
 
 
 .poke-tit {
