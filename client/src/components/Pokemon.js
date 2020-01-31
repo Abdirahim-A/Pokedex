@@ -50,7 +50,6 @@ class Pokemon extends Component{
         this.setState({ evolve, evolve_1});
       })
         this.setState({ pokemon, abilities, moves, types, stats,pokemon_species, egg_groups, description });
-        // do something with both responses
       }));
   }
 
