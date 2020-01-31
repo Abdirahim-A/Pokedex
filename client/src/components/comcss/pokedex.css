@@ -1,0 +1,103 @@
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    transition: 0.5s ease-in;
+}
+
+a{
+    text-decoration: none;
+ }
+
+.home-ul{
+    margin: 10vh 20vw 0vh 20vw;
+    padding: 0;
+}
+
+.home-li{
+    display: inline-block;
+    width: 19.8vw;
+    
+}
+
+.home-li:nth-child(2){
+    text-align: center;
+}
+
+.home-li:nth-child(3){
+    text-align: right;
+}
+.home-tit{
+    font-family: Helvetica;
+    font-size: 1.6vw;
+    font-weight: 600;
+}
+
+
+.theme-but{
+    font-family: Helvetica;
+    font-size: 1.2vw;
+    font-weight: 400;
+    background-color: transparent;
+    border: none;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.theme-but:hover{
+    opacity: 1;
+}
+
+.grid-container {
+    margin: 10vh 15vw 0vh 15vw;
+    display: grid;
+    grid-gap: 2vw;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+}
+
+.grid-item {
+    padding: 1vw;
+    background-color: rgba(232, 232, 232, 0.5);
+    border-radius: 2vw;
+    height: 35vh;
+    width: 15vw;
+    padding: 2vw;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.grid-item:hover{
+    transform: translatey(-5%);
+}
+
+
+
+@keyframes team {
+    0% {
+        opacity: 0;
+        transform: translatey(10px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translatey(0px)
+    }
+}
+
+
+.poke-tit {
+    font-family: Helvetica;
+    font-size: 1.6vw;
+    font-weight: 300;
+    margin: 0 0 3vh;
+}
+
+.img {
+    width: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+    margin: auto;
+}
+
