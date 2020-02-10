@@ -26,35 +26,41 @@ class Pokemon extends Component{
   }
 
   componentDidMount() {
-    //GET message from server using fetch api
-      axios.all([
-        axios.get(`${this.state.poke}`),
-        axios.get(`${this.state.poke}/pokemon-species`),
-        axios.get(`${this.state.poke}/pokemon-des`)
-      ])
-      .then(axios.spread((pokeRes, speciesRes, desRes) => {
-        const pokemon = pokeRes.data;
-        const abilities = pokeRes.data['abilities'];
-        const moves = pokeRes.data['moves'];
-        const types = pokeRes.data['types'];
-        const stats = pokeRes.data['stats'];
-        const pokemon_species = speciesRes.data;
-        const egg_groups = speciesRes.data['egg_groups'];
-        const evo_index = speciesRes.data['evolution_chain'].url;
-        const description = desRes.data[0].flavor_text;
 
-        axios.get(`${evo_index.split("/")[evo_index.split("/").length - 2]}/pokemon-evolve`)
-        .then(evoRes => {
-          const evolve = evoRes.data.chain.evolves_to;
-          const evolve_1 = evoRes.data.chain.species;
-        this.setState({ evolve, evolve_1});
-      })
-        this.setState({ pokemon, abilities, moves, types, stats,pokemon_species, egg_groups, description });
-      }));
+    axios.get(`https://europe-west2-pokedex-f895a.cloudfunctions.net/app${this.state.poke}`)
+    .then(pokeRes => {
+      const pokemon = pokeRes.data;
+      const abilities = pokeRes.data['abilities'];
+      const moves = pokeRes.data['moves'];
+      const types = pokeRes.data['types'];
+      const stats = pokeRes.data['stats'];
+      this.setState({pokemon, abilities, moves, types, stats });
+    })
+
+    axios.get(`https://europe-west2-pokedex-f895a.cloudfunctions.net/app${this.state.poke}/pokemon-species`)
+    .then(speciesRes => {
+      const pokemon_species = speciesRes.data;
+      const egg_groups = speciesRes.data['egg_groups'];
+      const evo_index = speciesRes.data['evolution_chain'].url;
+
+      axios.get(`https://europe-west2-pokedex-f895a.cloudfunctions.net/app/pokemon/${evo_index.split("/")[evo_index.split("/").length - 2]}/pokemon-evolve`)
+      .then(evoRes => {
+        const evolve = evoRes.data.chain.evolves_to;
+        const evolve_1 = evoRes.data.chain.species;
+      this.setState({pokemon_species, egg_groups, evolve, evolve_1});
+    })
+    })
+
+    axios.get(`https://europe-west2-pokedex-f895a.cloudfunctions.net/app${this.state.poke}/pokemon-des`)
+    .then(desRes => {
+      const description = desRes.data[0].flavor_text;
+    this.setState({ description });
+  })
   }
 
 
   render(){
+    console.log(this.state.poke)
   return (
     <div className="all">
           <Palette src={"https://pokeres.bastionbot.org/images/pokemon/"+this.state.pokemon.id+".png"}>
@@ -74,11 +80,6 @@ class Pokemon extends Component{
         hatch = {this.state.pokemon_species.hatch_counter}
         abilities = {this.state.abilities}
         />
-        <EvoStat 
-        stats = {this.state.stats}
-        evolve = {this.state.evolve}
-        evolve_1 = {this.state.evolve_1}
-        />
     </div>
     <div className="right">
         <div>
@@ -87,6 +88,11 @@ class Pokemon extends Component{
                   {this.state.description}
                 </p>
             </div>
+        <EvoStat 
+        stats = {this.state.stats}
+        evolve = {this.state.evolve}
+        evolve_1 = {this.state.evolve_1}
+        />
 
     </div>
   </div>

@@ -3,6 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const functions = require('firebase-functions');
+const cors = require('cors');
 
 var indexRouter = require('./routes/index');
 
@@ -26,6 +28,7 @@ app.use(function(req, res, next) {
 });
 
 // error handler
+app.use(cors({ origin: true }));
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
@@ -37,4 +40,4 @@ app.use(function(err, req, res, next) {
 });
 
 
-module.exports = app;
+exports.app = functions.region('europe-west2').https.onRequest(app);

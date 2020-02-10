@@ -9,31 +9,33 @@ a{
     text-decoration: none;
  }
 
-.home-ul{
+ button:focus {outline:0;}
+
+ .top {
     margin: 10vh 20vw 0vh 20vw;
-    padding: 0;
+    display: grid;
+    grid-gap: 2vw;
+    grid-template-columns: auto auto auto;
+    animation: fadeUp 0.25s 0.25s both; 
 }
 
-.home-li{
-    display: inline-block;
-    width: 18.8vw;
+.top-item {
+    width: 100%;
+    transition: 0.25s;
+    margin: auto 0;
 }
 
-.home-li:nth-child(2){
-    text-align: center;
-}
 
-.home-li:nth-child(3){
-    text-align: right;
-}
+
 .home-tit{
     font-family: Helvetica;
     font-size: 1.6vw;
     font-weight: 600;
+    text-align: center;
 }
 
-
-.theme-but{
+.about-but{
+    float: left;
     font-family: Helvetica;
     font-size: 1.2vw;
     font-weight: 600;
@@ -44,7 +46,20 @@ a{
     transition: 0.25s;
 }
 
-.theme-but:hover{
+.theme-but{
+    float: right;
+    font-family: Helvetica;
+    font-size: 1.2vw;
+    font-weight: 600;
+    background-color: transparent;
+    border: none;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.theme-but:hover, 
+.about-but:hover{
     opacity: 1;
 }
 

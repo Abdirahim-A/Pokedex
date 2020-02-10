@@ -22,21 +22,34 @@ body {
    margin-left: 5vw;
    display: grid;
    grid-gap: 0vw;
-   grid-template-columns: 30vw 20vw;
-   grid-template-rows: 10vh 60vh;
+   grid-template-columns: auto;
    background-color: rgba(255, 255, 255, 0.5);
    border-radius: 2vw;
    padding: 1vw;
+   height: 85vh;
    animation: fadeUp 0.5s 0.5s both; 
 }
 
 .grid-item-pokemon {
    transition: 0.25s;
-   padding: 2vw;
 }
 
+.grid-container-pokemon-tit_type {
+   display: grid;
+   grid-template-columns: auto auto;
+   animation: fadeUp 0.5s 0.5s both;
+   padding: 2vw;
+   padding-bottom: 0;
+}
 
-
+.grid-container-pokemon-img_stat {
+   display: grid;
+   grid-gap: 1vw;
+   grid-template-columns: auto auto;
+   animation: fadeUp 0.5s 0.5s both;
+   margin: 0 auto;
+   padding: 0vh 1vw;
+}
 
 .pro-tit {
    font-family: Helvetica;
@@ -75,9 +88,10 @@ body {
 
 
 .img-pokemon {
-   width: 110%;
+   width: 30vw;
    border-radius: 5px;
    object-fit: cover;
+   margin: 0 auto;
 }
 
 .profile-tit {
@@ -97,41 +111,40 @@ body {
 }
 
 .profile-ul{
+   margin: 1vw;
    background-color: rgba(255, 255, 255, 0.5);
+   padding: 1vw;
    border-radius: 2vw;
-   padding: 1.5vw;
-   margin-right: 2vw;
 }
 
 .profile-li{
    list-style: none;
+   margin: 0.5vw;
    
 }
 
 .grid-container-bot {
-   margin-top: 2vh;
-   margin-left: 5vw;
+   margin-top: 3vh;
+   margin-right: 5vw;
    display: grid;
    grid-gap: 5vh 1vw;
-   grid-template-columns: 30vw auto;
-   height: 17vh;
+   grid-template-columns: auto;
    animation: fadeUp 0.5s 0.75s both; 
 }
 
 .grid-item-bot {
    transition: 0.25s;
    padding: 0.5vw;
-   padding-left: 2vw;
+   padding: 2vw;
    background-color: rgba(255, 255, 255, 0.5);
    border-radius: 2vw;
-   height: 15vh;
    overflow-y: scroll;
 }
 
 .grid-con-stats {
    display: grid;
    grid-gap: 1vw;
-   grid-template-columns: 20% 45% 10%;
+   grid-template-columns: 25% 60% 10%;
 }
 
 .grid-item-stats {
@@ -149,7 +162,7 @@ body {
 .stat-name {
    font-family: Helvetica;
    font-size: 1vw;
-   font-weight: 500;
+   font-weight: 600;
    margin: 6px;
 }
 
@@ -157,21 +170,21 @@ body {
    font-family: Helvetica;
    font-size: 1vw;
    font-weight: 300;
-   margin: 6px;
+   margin: 0px;
 }
 
 .evo-tit {
    font-family: Helvetica;
    font-size: 1vw;
    font-weight: 500;
-   margin: 6px;
+   margin: 0px;
 }
 
 .evo-tit-num {
    font-family: Helvetica;
    font-size: 1vw;
    font-weight: 300;
-   margin: 6px;
+   margin: 0px;
    opacity: 0.5;
 }
 
@@ -184,17 +197,18 @@ body {
 .grid-item-evo {
    transition: 0.25s;
    border-radius: 2vw;
-   width: 50%;
+   width: 65%;
+   margin: 0 auto;
 }
 
 .img-evo{
    width: 100%;
-   margin: auto;
 }
 
 .des-tit{
+   display: none;
    font-family: Helvetica;
-   font-size: 2vw;
+   font-size: 1vw;
    font-weight: 500;
    opacity: 0.5;
    margin: 0;
@@ -203,10 +217,11 @@ body {
 
 .des-txt{
    font-family: Helvetica;
-   font-size: 2.5vw;
+   font-size: 1.5vw;
    font-weight: 500;
    margin: 1vh 5vw 1vh 0vw;
    animation: fadeUp 0.5s 1s both; 
+   height: 100%;
 }
 
 .grid-con-allMove {

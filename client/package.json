@@ -21,7 +21,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:3001",
+  "proxy": "https://europe-west2-pokedex-f895a.cloudfunctions.net/app",
   "eslintConfig": {
     "extends": "react-app"
   },

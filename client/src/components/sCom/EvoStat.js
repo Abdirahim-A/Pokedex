@@ -18,6 +18,25 @@ class EvoStat extends Component{
 <div class="grid-container-bot">
 
 <div class="grid-item-bot">
+    <div class="grid-con-stats">
+    {stats.map((stat) =>
+        <React.Fragment>
+        <div class="grid-item-stats">
+            <p class="stat-name">{stat.stat.name}</p>
+        </div>
+        <div class="grid-item-stats">
+            <div class="stat-div" style={{width: stat.base_stat}}></div>
+        </div>
+        <div class="grid-item-stats">
+            <p class="stat-num">{stat.base_stat}</p>
+        </div>
+        </React.Fragment>
+        )}
+    </div>
+    
+</div>
+
+<div class="grid-item-bot">
     <div class="grid-con-evo">
     {evolve.map((second =>
     second.evolves_to.map((third =>
@@ -32,7 +51,7 @@ class EvoStat extends Component{
           {evolve.map((second =>
           <React.Fragment>
           <p class="evo-tit-num">#{second.species.url.split("/")[third.species.url.split("/").length - 2]}</p>
-          <img src={`https://pokeres.bastionbot.org/images/pokemon/${second.species.url.split("/")[third.species.url.split("/").length - 2]}.png`} class="img-evo" />
+          <img src={`https://pokeres.bastionbot.org/images/pokemon/${second.species.url.split("/")[second.species.url.split("/").length - 2]}.png`} class="img-evo" />
           </React.Fragment>
           ))}
       </div>
@@ -52,25 +71,6 @@ class EvoStat extends Component{
       ))}
     </div>
 
-</div>
-
-<div class="grid-item-bot">
-    <div class="grid-con-stats">
-    {stats.map((stat) =>
-        <React.Fragment>
-        <div class="grid-item-stats">
-            <p class="stat-name">{stat.stat.name}</p>
-        </div>
-        <div class="grid-item-stats">
-            <div class="stat-div" style={{width: stat.base_stat}}></div>
-        </div>
-        <div class="grid-item-stats">
-            <p class="stat-num">{stat.base_stat}</p>
-        </div>
-        </React.Fragment>
-        )}
-    </div>
-    
 </div>
 </div>
 

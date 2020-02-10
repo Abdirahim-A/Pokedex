@@ -14,6 +14,7 @@ class PokeBasic extends Component{
     const {name, order, height, weight, egg_groups, hatch, abilities} = this.props;
   return (
         <div class="grid-container-pokemon">
+            <div className="grid-container-pokemon-tit_type">
                 <div class="grid-item-pokemon">
                     <p class="pro-tit">{name}</p>
                     <p class="pro-tit-num">#{order}</p>
@@ -22,6 +23,9 @@ class PokeBasic extends Component{
                     {//<div class="type-circ"><img src="drop.png" class="type-img" /></div>
                     }
                 </div>
+            </div>
+            
+            <div className="grid-container-pokemon-img_stat">
                 <div class="grid-item-pokemon">
                     <img src={`https://pokeres.bastionbot.org/images/pokemon/${order}.png`} class="img-pokemon" />
                 </div>
@@ -50,6 +54,7 @@ class PokeBasic extends Component{
                             abs.ability.name + ', ')}</p> 
                         </li>
                     </ul>
+                </div>
                 </div>
             </div>
 

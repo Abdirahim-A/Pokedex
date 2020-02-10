@@ -21,7 +21,7 @@ class Home extends Component{
 
   componentDidMount() {
     //GET message from server using fetch api 
-      axios.get('allPokemon.json')
+      axios.get('https://europe-west2-pokedex-f895a.cloudfunctions.net/app/allPokemon.json')
       .then(res => {
         const pokemon = res.data['results'];
         this.setState({ pokemon });
@@ -52,26 +52,20 @@ class Home extends Component{
             </Helmet>
 
     <div class="top">
-        <ul class="home-ul">
-            <li class="home-li">
-                <h1 class="theme-but">About</h1>
-            </li>
-            <li class="home-li">
-                <h1 class="home-tit">Pokedex</h1>
-            </li>
-            <li class="home-li"><button onClick={this.dark} class="theme-but">Dark</button> <button onClick={this.light} class="theme-but">Light</button></li>
-        </ul>
+      <div className="top-item"><h1 class="about-but">About</h1></div>
+      <div className="top-item"><h1 class="home-tit">Pokedex</h1></div>
+      <div className="top-item"><button onClick={this.dark} class="theme-but">Dark</button> <button onClick={this.light} class="theme-but">Light</button></div>
         <div class="theme"> </div>
     </div>
     <div>
     <div class="grid-container">
     {this.state.pokemon.map((key =>
-        <Pokedex  
+    <Pokedex  
         key={key.name}
         name={key.name}
         url={key.url}
         />
-        ))}
+    ))}
         </div>
     </div>
 
