@@ -1,7 +1,7 @@
 
 ## React Pokedex
 
-I made this project to learn how to handle api's and further devolop my developing skills. There is still a lot to fix, and i will keep on working on it.
+I made this project to learn how to handle api's and further devolop my coding skills. There is still a lot to fix, and i will keep on working on it.
 
 Here is a [link](https://pokedex-f895a.firebaseapp.com) to the project!
 
