@@ -6,8 +6,8 @@ I made this project to learn how to handle api's and further devolop my developi
 
 Screenshots               
 :-------------------------:
-![](https://github.com/Abdirahim-A/Pokedex/blob/master/images/poke1.png?raw=true)
 ![](https://github.com/Abdirahim-A/Pokedex/blob/master/images/poke2.png?raw=true)
+![](https://github.com/Abdirahim-A/Pokedex/blob/master/images/poke1.png?raw=true)
 
 
 ### Find me @
